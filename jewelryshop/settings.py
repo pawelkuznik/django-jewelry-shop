@@ -19,7 +19,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 # ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
-ALLOWED_HOSTS = ['52.58.220.246']
+ALLOWED_HOSTS = ['52.58.220.246', '*']
 
 
 # Application definition
@@ -60,6 +60,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'store.context_preprocessors.store_menu',
                 'store.context_preprocessors.cart_menu',
+                'jewelryshop',
             ],
         },
     },
