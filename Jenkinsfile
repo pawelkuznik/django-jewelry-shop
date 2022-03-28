@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh 'ssh -o StrictHostKeyChecking=no deployment-user@3.72.154.24 "source venv/bin/activate; \
                 cd django-jewelry-shop; \
-                git pull origin master; \
+                git pull origin main; \
                 pip install -r requirements.txt --no-warn-script-location; \
                 python manage.py migrate; \
                 deactivate; \
@@ -31,7 +31,7 @@ pipeline {
             steps {
                 sh 'ssh -o StrictHostKeyChecking=no deployment-user@52.58.220.246 "source venv/bin/activate; \
                 cd django-jewelry-shop; \
-                git pull origin master; \
+                git pull origin main; \
                 pip install -r requirements.txt --no-warn-script-location; \
                 python manage.py migrate; \
                 deactivate; \
