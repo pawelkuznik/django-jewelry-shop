@@ -11,7 +11,23 @@ pipeline {
                 sh 'python3 manage.py test'
             }
         }
-        stage('Deploy') {
+        stage('Deploy to staging') {
+            steps {
+                sh 'ssh -o StrictHostKeyChecking=no deployment-user@3.72.154.24 "source venv/bin/activate; \
+                cd django-jewelry-shop; \
+                git pull origin master; \
+                pip install -r requirements.txt --no-warn-script-location; \
+                python manage.py migrate; \
+                deactivate; \
+                sudo systemctl restart nginx; \
+                sudo systemctl restart gunicorn "'
+            }
+        }
+        stage('Deploy to staging') {
+            input {
+            message "Shall we deploy to production?"
+            ok "Yes, please"
+            }
             steps {
                 sh 'ssh -o StrictHostKeyChecking=no deployment-user@52.58.220.246 "source venv/bin/activate; \
                 cd django-jewelry-shop; \
