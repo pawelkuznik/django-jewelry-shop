@@ -23,7 +23,7 @@ pipeline {
                 sudo systemctl restart gunicorn "'
             }
         }
-        stage('Deploy to staging') {
+        stage('Deploy to production') {
             input {
             message "Shall we deploy to production?"
             ok "Yes, please"
