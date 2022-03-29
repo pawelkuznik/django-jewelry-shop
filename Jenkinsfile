@@ -34,9 +34,9 @@ pipeline {
                 docker run --rm -v /home/deployment-user/django-jewelry-shop/tests/visual_regression_tests:/src backstopjs/backstopjs test; \
                 cd html_report; \
                 pwd"'
-                sh """ssh -o StrictHostKeyChecking=no deployment-user@3.72.154.24 "source venv/bin/activate
-                publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'backstop_data/html_report/', reportFiles: 'index.html', reportName: 'HTML_Report', reportTitles: ''])
-                """
+                sh '''ssh -o StrictHostKeyChecking=no deployment-user@3.72.154.24 "source venv/bin/activate
+                publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: false, reportDir: /'backstop_data/html_report/', reportFiles: /'index.html/', reportName: /'HTML_Report/', reportTitles: ''])
+                '''
 
             }
         }
