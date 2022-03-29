@@ -29,7 +29,6 @@ pipeline {
                 cd django-jewelry-shop; \
                 git pull origin main; \
                 docker pull backstopjs/backstopjs; \
-                alias backstop=\'docker run --rm -v $(pwd):/src backstopjs/backstopjs "$@"\'; \
                 cd tests/visual_regression_tests; \
                 sudo backstop reference; \
                 deactivate"'
