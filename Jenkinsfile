@@ -28,7 +28,9 @@ pipeline {
                 sh 'ssh -o StrictHostKeyChecking=no deployment-user@3.72.154.24 "source venv/bin/activate; \
                 cd django-jewelry-shop/tests/visual_regression_tests; \
                 docker pull backstopjs/backstopjs \
-                sh alias backstop='docker run --rm -v $(pwd):/src backstopjs/backstopjs "$@"'
+                backstop reference
+                backstop test
+
             }
         }
         stage('Deploy to production') {
