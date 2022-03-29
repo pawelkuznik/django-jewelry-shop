@@ -31,7 +31,7 @@ pipeline {
                 docker pull backstopjs/backstopjs; \
                 cd tests/visual_regression_tests; \
                 pwd; \
-                run --rm -v /home/deployment-user/django-jewelry-shop/tests/visual_regression_tests:/src backstopjs/backstopjs reference; \
+                docker run --rm -v /home/deployment-user/django-jewelry-shop/tests/visual_regression_tests:/src backstopjs/backstopjs reference; \
                 deactivate"'
             }
         }
