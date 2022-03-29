@@ -33,6 +33,12 @@ pipeline {
                 docker run --rm -v /home/deployment-user/django-jewelry-shop/tests/visual_regression_tests:/src backstopjs/backstopjs reference; \
                 docker run --rm -v /home/deployment-user/django-jewelry-shop/tests/visual_regression_tests:/src backstopjs/backstopjs test; \
                 deactivate"'
+
+            }
+        }
+        stage('generate regression report') {
+            steps {
+                publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'home/deployment-user/django-jewelry-shop/tests/visual_regression_tests/', reportFiles: 'html_report/index.html', reportName: 'HTML Report', reportTitles: ''])
             }
         }
         stage('Deploy to production') {
