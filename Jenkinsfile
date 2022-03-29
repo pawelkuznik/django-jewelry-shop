@@ -30,6 +30,7 @@ pipeline {
                 git pull origin main; \
                 docker pull backstopjs/backstopjs; \
                 cd tests/visual_regression_tests; \
+                pwd; \
                 docker run --rm -v $(pwd):/src backstopjs/backstopjs reference; \
                 deactivate"'
             }
