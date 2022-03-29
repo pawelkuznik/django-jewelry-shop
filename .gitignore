@@ -1,6 +1,7 @@
 __pycache__/
 
-
-
+tests/visual_regression_tests/backstop_data/html_report/*
+tests/visual_regression_tests/backstop_data/bitmaps_reference/*
+tests/visual_regression_tests/backstop_data/bitmaps_test/*
 
 .idea/
