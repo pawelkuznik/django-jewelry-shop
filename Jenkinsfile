@@ -27,8 +27,8 @@ pipeline {
             steps {
                 sh 'ssh -o StrictHostKeyChecking=no deployment-user@3.72.154.24 "source venv/bin/activate; \
                 cd django-jewelry-shop/tests/visual_regression_tests; \
-                backstop reference; \
-                backstop test "'
+                sudo backstop reference; \
+                sudo backstop test "'
             }
         }
         stage('Deploy to production') {
