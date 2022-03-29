@@ -28,6 +28,7 @@ pipeline {
                 sh 'ssh -o StrictHostKeyChecking=no deployment-user@3.72.154.24 "source venv/bin/activate; \
                 cd django-jewelry-shop; \
                 git pull origin main; \
+                docker pull backstopjs/backstopjs; \
                 alias backstop=\'docker run --rm -v $(pwd):/src backstopjs/backstopjs "$@"\'; \
                 cd tests/visual_regression_tests; \
                 sudo backstop reference; \
