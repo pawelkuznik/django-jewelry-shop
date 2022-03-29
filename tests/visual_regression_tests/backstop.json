@@ -1,27 +1,27 @@
 {
-  "id": "backstop_default",
+  "id": "backstop_tests",
   "viewports": [
     {
-      "label": "phone",
-      "width": 320,
-      "height": 480
+      "label": "normal desktop screen",
+      "width": 1920,
+      "height": 1080
     },
     {
-      "label": "tablet",
-      "width": 1024,
-      "height": 768
+      "label": "common mobile device screen",
+      "width": 360,
+      "height": 640
     }
   ],
-  "onBeforeScript": "puppet/onBefore.js",
-  "onReadyScript": "puppet/onReady.js",
+  "onBeforeScript": "",
+  "onReadyScript": "",
   "scenarios": [
     {
-      "label": "BackstopJS Homepage",
+      "label": "jewelry store Homepage",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "https://garris.github.io/BackstopJS/",
-      "referenceUrl": "",
+      "url": "http://3.72.154.24",
+      "referenceUrl": "http://52.58.220.246",
       "readyEvent": "",
-      "readySelector": "",
+      "readySelector": "span.font-weight-bold.text-uppercase.text-dark",
       "delay": 0,
       "hideSelectors": [],
       "removeSelectors": [],
@@ -32,7 +32,8 @@
       "selectorExpansion": true,
       "expect": 0,
       "misMatchThreshold" : 0.1,
-      "requireSameDimensions": true
+      "requireSameDimensions": true,
+      "readyTimeout": 60000
     }
   ],
   "paths": {
@@ -47,8 +48,8 @@
   "engineOptions": {
     "args": ["--no-sandbox"]
   },
-  "asyncCaptureLimit": 5,
-  "asyncCompareLimit": 50,
+  "asyncCaptureLimit": 20,
+  "asyncCompareLimit": 100,
   "debug": false,
-  "debugWindow": false
+  "debugWindow": true
 }
