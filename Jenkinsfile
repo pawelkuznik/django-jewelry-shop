@@ -32,9 +32,7 @@ pipeline {
                 cd tests/visual_regression_tests; \
                 docker run --rm -v /home/deployment-user/django-jewelry-shop/tests/visual_regression_tests:/src backstopjs/backstopjs reference; \
                 cd html_report; \
-                pwd; \
-                publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: false, reportDir: \'backstop_data/html_report\', reportFiles: \'index.html\', reportName: \'HTML_Report\', reportTitles: \'\'])"'
-
+                pwd "'
 
             }
         }

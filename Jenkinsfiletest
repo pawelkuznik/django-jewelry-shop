@@ -1,3 +1,6 @@
+                publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: false, reportDir: \'backstop_data/html_report\', reportFiles: \'index.html\', reportName: \'HTML_Report\', reportTitles: \'\'])"'
+
+
 pipeline {
     agent any
     stages {
